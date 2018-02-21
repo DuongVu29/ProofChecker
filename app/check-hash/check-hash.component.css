@@ -1,0 +1,39 @@
+.container {
+
+}
+
+.hash {
+
+}
+
+.hash__input {
+  width: 60%;
+}
+
+.hash__button {
+  
+}
+
+.hash__details-datetime,
+.hash__details-infor {
+  display: flex;
+  width: 100%;
+}
+
+.hash__details-time {
+
+
+}
+
+.hash__details-infor {
+
+}
+
+.hash__details-party, .hash__details-date {
+  margin-right: 20px;
+  flex-basis: 30%;
+}
+
+.hash__details-hash, .hash__details-time {
+  flex-basis: 70%;;
+}
