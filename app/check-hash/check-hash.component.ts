@@ -20,6 +20,7 @@ export default class CheckHashComponent implements OnInit {
   data: any;
   fakeApiData: any;
   message: string;
+  jsonFile: any;
 
   constructor(
     private router: Router,
@@ -59,7 +60,7 @@ export default class CheckHashComponent implements OnInit {
     if(this.hash && this.hashFound == true) {
       this.router.navigate(['CheckInputComponent', { hash: this.hash}]);
       // this.router.navigate(['checkinput', { hash: this.hash}]);
-      console.log('ok to send', this.hash);
+      // console.log('ok to send', this.hash);
     } else {
       return;
     }
