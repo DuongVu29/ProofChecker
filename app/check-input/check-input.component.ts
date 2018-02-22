@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouteParams } from '@angular/router-deprecated';
-// import  { sha256 }  from 'js-sha256';
 import { sha256 } from 'js-sha256';
 
 @Component({
@@ -42,5 +41,9 @@ export default class CheckInputComponent implements OnInit {
       console.log(this.isMatched);
     }
 
+  }
+  goBack(): void {
+    this.router.navigate(['CheckHashComponent', { hash: this.inputHash}]);
+    //alert("back");
   }
 }

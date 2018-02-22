@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { Router, RouteParams } from '@angular/router-deprecated';
 //import { ProofService } from '../shared/services/proof.service';
 //import { MessageService } from '../shared/services/message.service';
 import {
@@ -20,9 +20,11 @@ export default class CheckHashComponent implements OnInit {
   data: any;
   fakeApiData: any;
   message: string;
+  inputHash: string = '';
 
   constructor(
     private router: Router,
+    private routeParams: RouteParams,
     private proofService: ProofService,
     private messageService: MessageService
   ) {}
@@ -35,6 +37,10 @@ export default class CheckHashComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    if(this.routeParams.get('hash')){
+      this.hash =  this.routeParams.get('hash');
+      //this.checkHash();
+    }
     console.log(this.fakeApiData);
   }
 

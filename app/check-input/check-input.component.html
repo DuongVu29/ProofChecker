@@ -44,7 +44,16 @@
     Source
     <textarea name="source" id="" cols="30" rows="10" [(ngModel)]="inputSource"></textarea>
   </div>
-  <button (click)="checkInput(source)">
-    Check Input
-  </button>
+  <table>
+    <tr>
+      <td>
+        <button (click)="checkInput(source)">
+          Check
+        </button>
+        <button (click)="goBack()">
+          Back
+        </button>
+      </td>
+      </tr>
+  </table>
 </div>
