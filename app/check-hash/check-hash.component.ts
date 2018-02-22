@@ -30,10 +30,12 @@ export default class CheckHashComponent implements OnInit {
   getData(): void {
     this.proofService.getData().then(res => this.data = res);
     this.proofService.getFakeDataApi().then(res => this.fakeApiData = res);
+    
   }
 
   ngOnInit(): void {
     this.getData();
+    console.log(this.fakeApiData);
   }
 
   checkHash() {
@@ -52,9 +54,14 @@ export default class CheckHashComponent implements OnInit {
   }
 
   checkInput() {
+    this.checkHash();
     // console.log('hash', this.hash)
     if(this.hash && this.hashFound == true) {
-      this.router.navigate(['CheckInputComponent', 'CheckInput', this.hash]);
+      this.router.navigate(['CheckInputComponent', { hash: this.hash}]);
+      // this.router.navigate(['checkinput', { hash: this.hash}]);
+      console.log('ok to send', this.hash);
+    } else {
+      return;
     }
   }
 }

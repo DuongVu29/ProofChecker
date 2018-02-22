@@ -5,8 +5,8 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/route
 // import { TimerComponent } from './timer/timer';
 // import { TasksComponent, TaskEditorComponent} from './tasks/tasks';
 //import {TaskEditorComponent } from './tasks/task-editor.component'
-import {CheckHashComponent} from './check-hash/checkhash';
-import {CheckInputComponent} from './check-input/checkinput';
+import { CheckHashComponent } from './check-hash/checkhash';
+import { CheckInputComponent } from './check-input/checkinput';
 
 @Component({
   selector: 'pomodoro-app',
@@ -29,7 +29,7 @@ import {CheckInputComponent} from './check-input/checkinput';
   { path: '',               name: 'Home',                 redirectTo: ['CheckHashComponent'] },
   { path: 'checkhash',      name: 'CheckHashComponent',   component: CheckHashComponent, useAsDefault: true },
   // { path: 'tasks',          name: 'TasksComponent',       component: TasksComponent},
-  { path: 'checkinput',     name: 'CheckInputComponent',  component: CheckInputComponent }
+  { path: 'checkinput/:hash',     name: 'CheckInputComponent',  component: CheckInputComponent }
 ])
 
 export default class AppComponent {}
