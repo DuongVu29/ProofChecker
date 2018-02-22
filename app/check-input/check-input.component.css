@@ -1,0 +1,23 @@
+.check-input-container {
+ display: flex;
+ align-content: center;
+ flex-direction: column;
+}
+
+table, textarea {
+  width: 100%;
+}
+
+button {
+  width: 10%;
+}
+
+.tick:before {
+  content: "\2713";
+  color: green;
+}
+
+.source-hash,
+.proof-hash {
+  width: 80%;
+}

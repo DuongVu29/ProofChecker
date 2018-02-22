@@ -1,32 +1,19 @@
-.container {
-
+table, textarea, input {
+  width: 100%;
 }
 
-.hash {
-
+input {
+  margin-bottom: 15px;
 }
 
 .hash__input {
   width: 60%;
 }
 
-.hash__button {
-  
-}
-
 .hash__details-datetime,
 .hash__details-infor {
   display: flex;
   width: 100%;
-}
-
-.hash__details-time {
-
-
-}
-
-.hash__details-infor {
-
 }
 
 .hash__details-party, .hash__details-date {

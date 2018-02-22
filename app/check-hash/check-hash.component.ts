@@ -19,6 +19,7 @@ export default class CheckHashComponent implements OnInit {
   proofDetails: any;
   data: any;
   fakeApiData: any;
+  message: string;
 
   constructor(
     private router: Router,
@@ -29,10 +30,12 @@ export default class CheckHashComponent implements OnInit {
   getData(): void {
     this.proofService.getData().then(res => this.data = res);
     this.proofService.getFakeDataApi().then(res => this.fakeApiData = res);
+    
   }
 
   ngOnInit(): void {
     this.getData();
+    console.log(this.fakeApiData);
   }
 
   checkHash() {
@@ -41,17 +44,24 @@ export default class CheckHashComponent implements OnInit {
 
     if (this.proofDetails) {
       this.hashFound = true;
-      this.messageService.clear();
+      // this.messageService.clear();
+      this.message = '';
     } else {
       this.hashFound = false;
-      this.messageService.add('No proof found with the hash supplied');
+      // this.messageService.add('No proof found with the hash supplied');
+      this.message = 'No proof found with the hash supplied!';
     }
   }
 
   checkInput() {
+    this.checkHash();
     // console.log('hash', this.hash)
     if(this.hash && this.hashFound == true) {
-      this.router.navigate(['CheckInputComponent', 'CheckInput', this.hash]);
+      this.router.navigate(['CheckInputComponent', { hash: this.hash}]);
+      // this.router.navigate(['checkinput', { hash: this.hash}]);
+      console.log('ok to send', this.hash);
+    } else {
+      return;
     }
   }
 }

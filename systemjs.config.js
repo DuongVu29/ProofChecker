@@ -3,6 +3,7 @@
   var pathMappings = {
     '@angular': 'node_modules/@angular',
     'rxjs': 'node_modules/rxjs',
+    'js-sha256': 'node_modules/js-sha256/src'
   };
 
   var packages = [
@@ -17,13 +18,14 @@
     '@angular/testing',
     'rxjs',
     'built',
+    'js-sha256'
   ];
 
   var packagesConfig = {};
 
   packages.forEach(function(packageName) {
     packagesConfig[packageName] = {
-      main: 'index.js',
+      main: packageName === 'js-sha256' ? 'sha256.js': 'index.js',
       defaultExtension: 'js'
     };
   });
