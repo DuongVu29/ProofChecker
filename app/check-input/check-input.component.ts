@@ -43,4 +43,18 @@ export default class CheckInputComponent implements OnInit {
     }
 
   }
+
+  fileChangeEvent(fileInput: any) {
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      
+      const reader = new FileReader();
+      let file = fileInput.target.files[0];
+
+      reader.onload = ((e) => {
+        this.inputSource = e.target['result'];
+      });
+
+      reader.readAsText(file);
+    } 
+  }
 }
