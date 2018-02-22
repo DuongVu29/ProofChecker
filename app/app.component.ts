@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { SHARED_PROVIDERS } from './shared/shared';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { TimerComponent } from './timer/timer';
-import { TasksComponent, TaskEditorComponent} from './tasks/tasks';
+// import { TimerComponent } from './timer/timer';
+// import { TasksComponent, TaskEditorComponent} from './tasks/tasks';
 //import {TaskEditorComponent } from './tasks/task-editor.component'
 import {CheckHashComponent} from './check-hash/checkhash';
 import {CheckInputComponent} from './check-input/checkinput';
@@ -13,7 +13,8 @@ import {CheckInputComponent} from './check-input/checkinput';
   directives: [ROUTER_DIRECTIVES],
   providers: [SHARED_PROVIDERS, HTTP_PROVIDERS, ROUTER_PROVIDERS],
   
-  template: '<router-outlet></router-outlet>'
+  template: '<div class="pomodoro-app"><router-outlet></router-outlet></div>',
+  styleUrls: ['app/app.component.css']
 })
 /*
 @RouteConfig([
@@ -27,7 +28,7 @@ import {CheckInputComponent} from './check-input/checkinput';
 @RouteConfig([
   { path: '',               name: 'Home',                 redirectTo: ['CheckHashComponent'] },
   { path: 'checkhash',      name: 'CheckHashComponent',   component: CheckHashComponent, useAsDefault: true },
-  { path: 'tasks',          name: 'TasksComponent',       component: TasksComponent},
+  // { path: 'tasks',          name: 'TasksComponent',       component: TasksComponent},
   { path: 'checkinput',     name: 'CheckInputComponent',  component: CheckInputComponent }
 ])
 

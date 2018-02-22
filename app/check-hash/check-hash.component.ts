@@ -19,6 +19,7 @@ export default class CheckHashComponent implements OnInit {
   proofDetails: any;
   data: any;
   fakeApiData: any;
+  message: string;
 
   constructor(
     private router: Router,
@@ -41,10 +42,12 @@ export default class CheckHashComponent implements OnInit {
 
     if (this.proofDetails) {
       this.hashFound = true;
-      this.messageService.clear();
+      // this.messageService.clear();
+      this.message = '';
     } else {
       this.hashFound = false;
-      this.messageService.add('No proof found with the hash supplied');
+      // this.messageService.add('No proof found with the hash supplied');
+      this.message = 'No proof found with the hash supplied!';
     }
   }
 
